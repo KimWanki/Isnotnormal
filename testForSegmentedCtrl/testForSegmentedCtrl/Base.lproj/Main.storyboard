@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BAZ-Pg-QYT">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Switch SegmentedCtrlView-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="testForSegmentedCtrl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="orF-5f-b9A">
+                                <rect key="frame" x="0.0" y="80" width="375" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="NEe-2g-ge1"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedCtrlViewAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="RF6-70-jy1"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O6u-XN-FWx">
+                                <rect key="frame" x="0.0" y="146" width="375" height="521"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="cx4-3X-QWN"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="OcC-jw-4xm"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="O6u-XN-FWx" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0JF-0J-Yth"/>
+                            <constraint firstItem="O6u-XN-FWx" firstAttribute="top" secondItem="orF-5f-b9A" secondAttribute="bottom" constant="36" id="2cY-aJ-Vz0"/>
+                            <constraint firstItem="orF-5f-b9A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2xn-u4-na2"/>
+                            <constraint firstItem="orF-5f-b9A" firstAttribute="trailing" secondItem="O6u-XN-FWx" secondAttribute="trailing" id="LE5-W2-zWq"/>
+                            <constraint firstItem="orF-5f-b9A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="b55-Ey-5XQ"/>
+                            <constraint firstItem="orF-5f-b9A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bTu-qa-Zz6"/>
+                            <constraint firstItem="orF-5f-b9A" firstAttribute="leading" secondItem="O6u-XN-FWx" secondAttribute="leading" id="ePO-bW-ADC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Switch SegmentedCtrlView" id="TLY-o6-RVI"/>
+                    <connections>
+                        <outlet property="tableView" destination="O6u-XN-FWx" id="NWK-7b-78Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055.2" y="137.18140929535232"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FOL-Dp-nEF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BAZ-Pg-QYT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3n9-fM-cpY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xCm-zC-8zb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lBB-zf-l7K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+</document>
